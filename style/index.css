@@ -18,6 +18,7 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 .container {
@@ -105,8 +106,7 @@ body {
 
 .navbar_mobile_container.show {
     margin: 1rem;
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 1);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     padding: 2rem;
     display: flex;
@@ -167,7 +167,11 @@ body {
 }
 
 .navbar_brand_logo {
-  width: 10rem;
+  width: 8rem;
+
+  @media (min-width: 1024px) {
+    width: 10rem;
+  }
 }
 
 .navbar-toggler {
@@ -464,15 +468,19 @@ body {
 .hero_content_right_side_main_container {
   position: relative;
   border-radius: 1rem;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255);
   max-height: 37rem;
   display: flex;
   flex-direction: column;
   max-width: 425px;
   margin: 0 auto;
-  backdrop-filter: blur(8px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   z-index: 20;
+
+  @media (min-width: 1024px) {
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.75);
+  }
 }
 
 .hero_content_right_side_container {
@@ -514,8 +522,10 @@ body {
 .form_container_input {
   padding: 1rem;
   border: 1px solid rgba(156, 163, 175, 1);
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   background-color: white;
+  max-width: 20rem;
+  width: 90%;
 }
 
 .form_container_input::placeholder {
@@ -1050,10 +1060,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 6rem;
+  width: 5rem;
   margin: 0 auto;
   gap: 0.5rem;
   cursor: pointer;
+  
+  @media (min-width: 1024px) {
+    width: 6rem;
+  }
 }
 
 .signup_button:hover {
